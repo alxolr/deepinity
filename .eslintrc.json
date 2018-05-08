@@ -4,6 +4,7 @@
         "strict": "off",
         "no-param-reassign": "off",
         "no-console": "off",
-        "no-use-before-define": "off"
+        "no-use-before-define": "off",
+        "no-underscore-dangle": "off"
     }
 }
