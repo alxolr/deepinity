@@ -47,5 +47,10 @@ program
   .description('remove an entry by id')
   .action(deepinity.remove);
 
+program
+  .command('sum')
+  .description('get the total numbers of meditated hours')
+  .action(deepinity.sum);
+
 process.on('unhandledRejection', console.error);
 process.on('uncaughtException', console.error);

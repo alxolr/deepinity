@@ -10,6 +10,7 @@ module.exports = {
   log,
   list,
   remove,
+  sum,
 };
 
 function log(duration, comment) {
@@ -62,6 +63,17 @@ function remove(entry) {
     .catch(handleError);
 }
 
+function sum() {
+  return Sit.find()
+    .lean()
+    .then((docs) => {
+      const amount = docs.reduce((a, e) => a += e.duration, 0); // eslint-disable-line
+      const inHours = Math.ceil(amount / 60);
+      console.log('Total meditated', String(inHours).green, 'minutes');
+      mongoose.disconnect();
+    })
+    .catch(handleError);
+}
 
 function handleError(err) {
   console.error(err);
