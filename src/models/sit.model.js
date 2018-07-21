@@ -20,4 +20,4 @@ const SitSchema = new Schema(
 require('../repositories/sit.repository')(SitSchema);
 
 
-module.exports = mongoose.model('Sit', SitSchema);
+module.exports = mongoose.model('Worklog', SitSchema);
